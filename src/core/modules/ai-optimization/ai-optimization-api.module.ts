@@ -1,15 +1,25 @@
-import { BaseModule } from '../base.module';
-import { DataForSEOClient } from '../../client/dataforseo.client';
-import { AiKeywordTool } from './tools/ai-keyword.tool.ts';
+import { DataForSEOClient } from '../../client/dataforseo.client.ts';
+import { BaseModule, ToolDefinition } from '../base.module.ts';
+import { AIKeywordDataTool } from './tools/ai-keyword-data/ai-keyword-data.tool.ts';
 
-export class AiOptimizationApiModule extends BaseModule {
-  constructor(private client: DataForSEOClient) {
-    super();
+export class AIOptimizationApi extends BaseModule {
+  constructor(client: DataForSEOClient) {
+    super(client);
   }
 
-  getTools() {
-    return {
-      'ai_keyword': new AiKeywordTool(this.client),
-    };
+  getTools(): Record<string, ToolDefinition> {
+    const tools = [
+      new AIKeywordDataTool(this.dataForSEOClient),
+      // Add more tools here
+    ];
+
+    return tools.reduce((acc, tool) => ({
+      ...acc,
+      [tool.getName()]: {
+        description: tool.getDescription(),
+        params: tool.getParams(),
+        handler: (params: any) => tool.handle(params),
+      },
+    }), {});
   }
 }
