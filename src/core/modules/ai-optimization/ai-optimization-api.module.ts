@@ -1,6 +1,6 @@
 import { DataForSEOClient } from '../../client/dataforseo.client.ts';
 import { BaseModule, ToolDefinition } from '../base.module.ts';
-import { AIKeywordDataTool } from './tools/ai-keyword-data/ai-keyword-data.tool.ts';
+import { AIKeywordsSearchVolumeTool } from './tools/ai-keyword-data/ai-keywords-search-volume.tool.ts';
 
 export class AIOptimizationApi extends BaseModule {
   constructor(client: DataForSEOClient) {
@@ -9,7 +9,7 @@ export class AIOptimizationApi extends BaseModule {
 
   getTools(): Record<string, ToolDefinition> {
     const tools = [
-      new AIKeywordDataTool(this.dataForSEOClient),
+      new AIKeywordsSearchVolumeTool(this.dataForSEOClient),
       // Add more tools here
     ];
 
