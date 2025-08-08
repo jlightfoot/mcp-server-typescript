@@ -35,8 +35,6 @@ const enabledModules = EnabledModulesSchema.parse(process.env.ENABLED_MODULES);
 const modules: BaseModule[] = ModuleLoaderService.loadModules(dataForSEOClient, enabledModules);
 console.error('Modules initialized');
 
-}
-
 // Register tools from modules
 function registerModuleTools() {
   modules.forEach(module => {
