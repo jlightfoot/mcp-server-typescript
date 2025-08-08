@@ -21,7 +21,10 @@ The AI search volume values are calculated using statistical data from questions
 
   getParams(): z.ZodRawShape {
     return {
-      keywords: z.array().describe(`target keywords`),
+      keywords: z.array(z.string()).describe(`target keywords
+required field
+UTF-8 encoding
+maximum number of keywords you can specify in this array: 1000`),
       location_name: z.string().default("United States").describe(`full name of the location
 required field
 in format "Country"
