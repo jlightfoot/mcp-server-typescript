@@ -34,6 +34,9 @@ const enabledModules = EnabledModulesSchema.parse(process.env.ENABLED_MODULES);
 // Initialize modules
 const modules: BaseModule[] = ModuleLoaderService.loadModules(dataForSEOClient, enabledModules);
 console.error('Modules initialized');
+if (isModuleEnabled('AI_OPTIMIZATION', enabledModules)) {
+  modules.push(new AIOptimizationApiModule(dataForSEOClient));
+}
 
 // Register tools from modules
 function registerModuleTools() {
