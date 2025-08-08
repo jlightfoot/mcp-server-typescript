@@ -15,6 +15,9 @@ export class ModuleLoaderService {
   static loadModules(dataForSEOClient: DataForSEOClient, enabledModules: EnabledModules): BaseModule[] {
     const modules: BaseModule[] = [];
 
+    if (isModuleEnabled('AI_OPTIMIZATION', enabledModules)) {
+      modules.push(new AIOptimizationApiModule(dataForSEOClient));
+    }
     if (isModuleEnabled('SERP', enabledModules)) {
       modules.push(new SerpApiModule(dataForSEOClient));
     }
