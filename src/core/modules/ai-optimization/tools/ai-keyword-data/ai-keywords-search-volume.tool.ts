@@ -21,7 +21,7 @@ The AI search volume values are calculated using statistical data from questions
 
   getParams(): z.ZodRawShape {
     return {
-      keyword: z.string().describe(`target keyword`),
+      keywords: z.string().describe(`target keyword`),
       location_name: z.string().default("United States").describe(`full name of the location
 required field
 in format "Country"
@@ -38,8 +38,8 @@ United Kingdom`),
   async handle(params: any): Promise<any> {
     try {
       const response = await this.client.makeRequest('/v3/ai_optimization/ai_keyword_data/keywords_search_volume/live', 'POST', [{
-        keyword: params.keyword,
-        location_name: params.locatikeon_name,
+        keywords: params.keywords,
+        location_name: params.location_name,
         language_code: params.language_code,
       }]);
       return this.validateAndFormatResponse(response);
