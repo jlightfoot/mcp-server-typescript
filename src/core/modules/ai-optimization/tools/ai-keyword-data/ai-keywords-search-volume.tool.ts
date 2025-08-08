@@ -1,6 +1,6 @@
 import { z } from 'zod';
-import { DataForSEOClient } from '../../../../../client/dataforseo.client.ts';
-import { BaseTool } from '../../../../base.tool.ts';
+import { DataForSEOClient } from '../../../../client/dataforseo.client.js';
+import { BaseTool } from '../../../base.tool.js';
 
 export class AIKeywordsSearchVolumeTool extends BaseTool {
   constructor(private client: DataForSEOClient) {
