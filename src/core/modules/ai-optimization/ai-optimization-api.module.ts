@@ -2,7 +2,7 @@ import { DataForSEOClient } from '../../client/dataforseo.client.js';
 import { BaseModule, ToolDefinition } from '../base.module.js';
 import { AIKeywordsSearchVolumeTool } from './tools/ai-keyword-data/ai-keywords-search-volume.tool.js';
 
-export class AIOptimizationApi extends BaseModule {
+export class AIOptimizationApiModule extends BaseModule {
   constructor(client: DataForSEOClient) {
     super(client);
   }
