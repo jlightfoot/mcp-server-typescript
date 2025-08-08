@@ -9,7 +9,7 @@ export class AiOptimizationApiModule extends BaseModule {
 
   getTools() {
     return {
-      'AiKeywordTool': new AiKeywordTool(this.client),
+      'ai_keyword': new AiKeywordTool(this.client),
     };
   }
 }
