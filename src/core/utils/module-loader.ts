@@ -1,4 +1,5 @@
 import { DataForSEOClient } from '../client/dataforseo.client.js';
+import { AIOptimizationApiModule } from '../modules/ai-optimization/ai-optimization-api.module.js';
 import { SerpApiModule } from '../modules/serp/serp-api.module.js';
 import { KeywordsDataApiModule } from '../modules/keywords-data/keywords-data-api.module.js';
 import { OnPageApiModule } from '../modules/onpage/onpage-api.module.js';
