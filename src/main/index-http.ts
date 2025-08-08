@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { DataForSEOClient, DataForSEOConfig } from '../core/client/dataforseo.client.js';
+import { AIOptimizationApiModule} from '../core/modules/ai-optimization/ai-optimization-api.module.js';
 import { SerpApiModule } from '../core/modules/serp/serp-api.module.js';
 import { KeywordsDataApiModule } from '../core/modules/keywords-data/keywords-data-api.module.js';
 import { OnPageApiModule } from '../core/modules/onpage/onpage-api.module.js';
