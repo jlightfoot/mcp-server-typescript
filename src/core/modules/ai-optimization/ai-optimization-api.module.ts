@@ -1,6 +1,6 @@
-import { DataForSEOClient } from '../../client/dataforseo.client.ts';
-import { BaseModule, ToolDefinition } from '../base.module.ts';
-import { AIKeywordsSearchVolumeTool } from './tools/ai-keyword-data/ai-keywords-search-volume.tool.ts';
+import { DataForSEOClient } from '../../client/dataforseo.client.js';
+import { BaseModule, ToolDefinition } from '../base.module.js';
+import { AIKeywordsSearchVolumeTool } from './tools/ai-keyword-data/ai-keywords-search-volume.tool.js';
 
 export class AIOptimizationApi extends BaseModule {
   constructor(client: DataForSEOClient) {
